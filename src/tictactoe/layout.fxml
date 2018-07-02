@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.GuiController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="600.0" prefWidth="600.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <GridPane gridLinesVisible="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="300.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="pos00" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos01" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos02" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos10" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos11" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos12" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos20" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos21" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ImageView fx:id="pos22" fitHeight="190.0" fitWidth="190.0" onMousePressed="#putPlayersSymbol" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <Label layoutX="15.0" layoutY="74.0" text="O player" AnchorPane.leftAnchor="15.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="246.0" layoutY="74.0" text="X player" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="126.0" layoutY="14.0" text="Score">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="oScore" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="101.0" layoutY="74.0" prefHeight="30.0" prefWidth="35.0" text="0" textAlignment="RIGHT" AnchorPane.rightAnchor="165.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="xScore" layoutX="175.0" layoutY="74.0" prefHeight="30.0" prefWidth="43.0" text="0" AnchorPane.leftAnchor="165.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="148.0" layoutY="74.0" text=":">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Button fx:id="restartScore" layoutX="79.0" layoutY="311.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="58.0" prefWidth="149.0" text="Restart score">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button fx:id="nextRound" layoutX="79.0" layoutY="242.0" mnemonicParsing="false" onAction="#playNextRound" prefHeight="58.0" prefWidth="149.0" text="Next round">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Label fx:id="winner" alignment="CENTER" layoutX="81.0" layoutY="154.0" prefHeight="30.0" prefWidth="149.0" text="WHO_WON" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
