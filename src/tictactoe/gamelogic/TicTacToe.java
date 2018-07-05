@@ -27,20 +27,28 @@ public class TicTacToe {
         return win;
     }
 
-    //is some cases it doesn't check win condition. Each if statement works when separated but all together don't work
     public int checkWinCondition() {
-        if ((Objects.equals(board.get(0), board.get(1)) && Objects.equals(board.get(0), board.get(2)))
-                || (Objects.equals(board.get(0), board.get(4)) && Objects.equals(board.get(0), board.get(8)))
-                || (Objects.equals(board.get(0), board.get(3)) && Objects.equals(board.get(0), board.get(6)))) {
-            win = board.get(0);
-        } else if ((Objects.equals(board.get(4), board.get(1)) && Objects.equals(board.get(4), board.get(7)))
-                || (Objects.equals(board.get(4), board.get(3)) && Objects.equals(board.get(4), board.get(5)))
-                || (Objects.equals(board.get(4), board.get(2)) && Objects.equals(board.get(4), board.get(6)))) {
-            win = board.get(4);
-        } else if ((Objects.equals(board.get(8), board.get(2)) && Objects.equals(board.get(8), board.get(5)))
-                || (Objects.equals(board.get(8), board.get(7)) && Objects.equals(board.get(8), board.get(6)))) {
-            win = board.get(8);
+
+        if ((board.get(0) == 1 && board.get(1) == 1 && board.get(2) == 1)
+                || (board.get(0) == 1 && board.get(3) == 1 && board.get(6) == 1)
+                || (board.get(0) == 1 && board.get(4) == 1 && board.get(8) == 1)
+                || (board.get(4) == 1 && board.get(1) == 1 && board.get(7) == 1)
+                || (board.get(3) == 1 && board.get(4) == 1 && board.get(5) == 1)
+                || (board.get(2) == 1 && board.get(4) == 1 && board.get(6) == 1)
+                ||( board.get(2) == 1 && board.get(5) == 1 && board.get(8) == 1)
+                || (board.get(6) == 1 && board.get(7) == 1 && board.get(8) == 1)){
+            win = 1;
+        } else if ((board.get(0) == -1 && board.get(1) == -1 && board.get(2) == -1)
+                || (board.get(0) == -1 && board.get(3) == -1 && board.get(6) == -1)
+                || (board.get(0) == -1 && board.get(4) == -1 && board.get(8) == -1)
+                || (board.get(4) == -1 && board.get(1) == -1 && board.get(7) == -1)
+                || (board.get(3) == -1 && board.get(4) == -1 && board.get(5) == -1)
+                || (board.get(2) == -1 && board.get(4) == -1 && board.get(6) == -1)
+                ||( board.get(2) == -1 && board.get(5) == -1 && board.get(8) == -1)
+                || (board.get(6) == -1 && board.get(7) == -1 && board.get(8) == -1)) {
+            win = -1;
         }
+
         return win;
     }
 
